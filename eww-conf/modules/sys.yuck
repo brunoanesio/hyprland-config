@@ -1,0 +1,47 @@
+(defvar cpu_rev false)
+(defvar mem_rev false)
+
+(defwidget sys []
+  (box
+    :space-evenly false
+    (eventbox
+      :onhover "${EWW_CMD} update cpu_rev=true"
+      :onhoverlost "${EWW_CMD} update cpu_rev=false"
+      :onclick "${EWW_CMD} open --toggle system-menu"
+      (box
+      :class "module"
+      :space-evenly false
+        (box
+        :space-evenly false
+        :spacing 2
+          (label
+            :style "color: #89b4fa;"
+            :text " ")
+          (revealer
+            :transition "slideright"
+            :duration "250ms"
+            :reveal cpu_rev
+            (label 
+              :tooltip "using ${round(EWW_CPU.avg,0)}% cpu"
+              :text "${round(EWW_CPU.avg,0)}%")))))
+    (eventbox
+      :onhover "${EWW_CMD} update mem_rev=true"
+      :onhoverlost "${EWW_CMD} update mem_rev=false"
+      :onclick "${EWW_CMD} open --toggle system-menu"
+      (box
+      :class "module"
+      :space-evenly false
+        (box
+        :space-evenly false
+        :spacing 2
+          (label
+            :style "color: #cbb4fa;"
+            :text " ")
+          (revealer
+            :transition "slideright"
+            :duration "250ms"
+            :reveal mem_rev
+            (label 
+              :tooltip "using ${memory.used} ram"
+              :style "padding-right: 0px"
+              :text "${memory.used}")))))))

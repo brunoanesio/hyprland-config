@@ -1,0 +1,24 @@
+(defvar perc_rev false)
+
+(defwidget volume-module []
+  (eventbox
+    :onhover "${EWW_CMD} update perc_rev=true"
+    :onhoverlost "${EWW_CMD} update perc_rev=false"
+    :onscroll "echo {} | sed -e 's/up/+/g' -e 's/down/-/g' | xargs -I% wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.005%"
+    :onclick "pavucontrol &"
+    :onrightclick "scripts/volume mute SINK"
+    (box
+      :class "module"
+      :space-evenly false
+      (box
+        :space-evenly false
+        (button
+          :class "vol-icon"
+          {volume.icon})
+        (revealer
+          :transition "slideright"
+          :duration "250ms"
+          :reveal perc_rev
+          (label 
+            :tooltip "volume at ${volume.percent}%"
+            :text "${volume.percent}%"))))))

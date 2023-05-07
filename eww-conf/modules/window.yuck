@@ -1,0 +1,9 @@
+(deflisten window :initial "..." "bash ~/.config/eww/scripts/get-window-title")
+(defwidget window_w []
+  (box 
+    :class "module"
+    :space-evenly false
+    (label 
+    :limit-width 50
+    :wrap false
+    :text "${window}")))

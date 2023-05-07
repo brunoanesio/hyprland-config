@@ -1,0 +1,13 @@
+; (defvar ws-icons '["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]')
+(defwidget workspaces []
+  (eventbox
+    :onscroll "echo {} | sed -e \"s/up/+1/g\" -e \"s/down/-1/g\" | xargs hyprctl dispatch workspace"
+    (box
+      :class "module workspaces"
+	  :spacing 5
+	  (for ws in workspace
+	    (button
+		  :onclick "hyprctl dispatch workspace ${ws.number}"
+          :class "ws num"
+		  :style "color: ${ws.color};"
+		  (label :text "${ws.number}"))))))

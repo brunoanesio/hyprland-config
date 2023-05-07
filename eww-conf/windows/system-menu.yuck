@@ -1,0 +1,156 @@
+(defwidget system-menu []
+  (box
+    :class "system-menu-box"
+    :space-evenly false
+    :orientation "v"
+    (box
+      :class "top-row"
+      :space-evenly false
+      (label
+        :class "time"
+        :text "${time.hour}:${time.minute}")
+      (box
+        :class "date-box"
+        :space-evenly false
+        (label
+          :class "date"
+          :text {time.date})
+        (label
+          :class "day"
+          :text {time.day})))
+
+    (centerbox
+      :class "system-row"
+      (box
+        :class "net-box"
+        :space-evenly false
+        :orientation "v"
+        (box
+          :class "element icon ${net.class}"
+          :space-evenly false
+          (button
+            :class "net-button"
+            :onclick "scripts/net toggle"
+            {net.icon})
+          (label
+            :class "separator"
+            :text "│")
+          (button
+            :class "net-arrow-btn"
+            :onclick "eww close system-menu && gnome-control-center &"
+            ""))
+        (label
+          :text {net.name}
+          :xalign 0.5
+          :justify "center"
+          :wrap true))
+
+      (box
+        :class "bluetooth-box"
+        :space-evenly false
+        :orientation "v"
+        (box
+          :class "element icon ${bluetooth.class}"
+          :space-evenly false
+          (button
+            :class "bluetooth-button"
+            :onclick "scripts/bluetooth toggle"
+            {bluetooth.icon})
+          (label
+            :class "separator"
+            :text "│")
+          (button
+            :class "bluetooth-arrow-btn"
+            :onclick "eww close system-menu && blueberry"
+            ""))
+        (label
+          :text {bluetooth.text}
+          :xalign 0.5
+          :justify "center"
+          :tooltip {bluetooth.battery}
+          :wrap true))
+
+    (box
+      :class "sliders"
+      :orientation "v"
+      (box
+        :class "volume-slider-box"
+        :space-evenly false
+        (button
+          :class "volume-icon icon"
+          :onclick "scripts/volume mute SINK"
+          {volume.icon})
+        (scale
+          :class "volume-bar"
+          :value {volume.percent}
+          :tooltip "volume on ${volume.percent}%"
+          :onchange "scripts/volume setvol SINK {}"))
+
+    (box
+      :class "system-info-box"
+
+      ; cpu
+      (box
+        :class "sys-box"
+        :space-evenly false
+        :halign "start"
+        (circular-progress
+          :value "${EWW_CPU.avg}"
+          :class "sys-cpu"
+          :thickness 3
+          (label
+            :text ""
+            :class "sys-icon-cpu icon"))
+        (box
+          :orientation "v"
+          :vexpand false
+          (label
+            :text "cpu"
+            :halign "start"
+            :class "sys-text-cpu")
+          (label
+            :text "${round(EWW_CPU.avg,2)}%"
+            :halign "start"
+            :class "sys-text-sub")
+          (label
+            :text "${EWW_CPU.cores[0].freq} MHz"
+            :halign "start"
+            :class "sys-text-sub")))
+
+      ; memory
+      (box
+        :class "sys-box"
+        :space-evenly false
+        :halign "end"
+        (circular-progress
+          :value {memory.percent}
+          :class "sys-mem"
+          :thickness 3
+          (label
+            :text ""
+            :class "sys-icon-mem icon"))
+        (box
+          :orientation "v"
+          (label
+            :text "memory"
+            :halign "start"
+            :class "sys-text-mem")
+          (label
+            :text "${memory.used} used"
+            :halign "start"
+            :class "sys-text-sub")
+          (label
+            :text "${memory.total} total"
+            :halign "start"
+            :class "sys-text-sub"))))))))
+
+(defwindow system-menu
+  :stacking "fg" 
+  :monitor 0
+  :geometry (geometry
+    :x "0"
+    :y "0"
+    :width "0%"
+    :height "0%"
+    :anchor "right top")
+  (system-menu))
