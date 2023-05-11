@@ -1,5 +1,6 @@
 (include "./modules/bluetooth.yuck")
 (include "./modules/clock.yuck")
+(include "./modules/indicators.yuck")
 (include "./modules/music.yuck")
 (include "./modules/net.yuck")
 (include "./modules/sys.yuck")
@@ -26,6 +27,7 @@
     :halign "end"
     :spacing 4
     ;(bluetooth)
+    (indicators)
     (net)
     (volume-module)
     (sys)

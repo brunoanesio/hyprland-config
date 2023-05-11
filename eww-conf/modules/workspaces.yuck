@@ -5,7 +5,7 @@
     (box
       :class "module workspaces"
 	  :spacing 5
-	  (for ws in workspace
+	  (for ws in {hyprland.workspaces}
 	    (button
 		  :onclick "hyprctl dispatch workspace ${ws.number}"
           :class "ws num"

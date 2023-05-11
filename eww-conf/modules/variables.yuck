@@ -10,9 +10,9 @@
 (defpoll time :interval "5s" `date +'{"date": "%d/%m", "hour": "%H", "minute": "%M", "day": "%A"}'`)
 
 (deflisten bluetooth "scripts/bluetooth")
-;(deflisten brightness "scripts/brightness")
+(deflisten indicators "scripts/indicators")
 (deflisten memory "scripts/memory")
 (deflisten music "scripts/music")
 (deflisten net "scripts/net")
 (deflisten volume "scripts/volume")
-(deflisten workspace "scripts/workspaces")
+(deflisten hyprland "scripts/hyprland")
