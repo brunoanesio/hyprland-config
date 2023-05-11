@@ -7,7 +7,6 @@
 (include "./modules/variables.yuck")
 (include "./modules/volume.yuck")
 (include "./modules/workspaces.yuck")
-(include "./modules/window.yuck")
 (include "./modules/power.yuck")
 
 (include "./windows/calendar.yuck")
