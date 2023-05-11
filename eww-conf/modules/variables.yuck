@@ -9,6 +9,7 @@
 
 (defpoll time :interval "5s" `date +'{"date": "%d/%m", "hour": "%H", "minute": "%M", "day": "%A"}'`)
 
+(deflisten airplane "scripts/airplane")
 (deflisten bluetooth "scripts/bluetooth")
 (deflisten indicators "scripts/indicators")
 (deflisten memory "scripts/memory")

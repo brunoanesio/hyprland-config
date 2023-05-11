@@ -37,7 +37,7 @@
             :text "│")
           (button
             :class "net-arrow-btn"
-            :onclick "eww close system-menu && gnome-control-center &"
+            :onclick "eww close system-menu && XDG_CURRENT_DESKTOP=GNOME gnome-control-center &"
             ""))
         (label
           :text {net.name}
@@ -70,6 +70,22 @@
           :tooltip {bluetooth.battery}
           :wrap true))
 
+      (box))
+      ;(box
+      ;  :class "airplane-box"
+      ;  :space-evenly false
+      ;  :orientation "v"
+      ;  (box
+      ;    :class "element"
+      ;    (button
+      ;      :class "airplane-button"
+      ;      :onclick "scripts/airplane toggle"
+      ;      airplane))
+      ;  (label
+      ;    :text "Airplane Mode"
+      ;    :xalign 0.5
+      ;    :limit-width 16)))
+
     (box
       :class "sliders"
       :orientation "v"
@@ -84,7 +100,18 @@
           :class "volume-bar"
           :value {volume.percent}
           :tooltip "volume on ${volume.percent}%"
-          :onchange "scripts/volume setvol SINK {}"))
+          :onchange "scripts/volume setvol SINK {}")))
+      ;(box
+      ;  :class "brightness-slider-box"
+      ;  :space-evenly false
+      ;  (button
+      ;    :class "brightness-slider-icon icon"
+      ;    {brightness.icon})
+      ;  (scale
+      ;    :class "brightness-slider" 
+      ;    :value {brightness.percent} 
+      ;    :marks true 
+      ;    :onchange "light -S {}")))
 
     (box
       :class "system-info-box"
@@ -142,7 +169,36 @@
           (label
             :text "${memory.total} total"
             :halign "start"
-            :class "sys-text-sub"))))))))
+            :class "sys-text-sub"))))
+
+    ;(centerbox
+    (box
+      :class "bottom-row"
+      ;(box
+      ;  :class "battery-box"
+      ;  :space-evenly false
+      ;  :halign "start"
+      ;  (label
+      ;    :class "battery-icon icon"
+      ;    :style "color: ${battery.color}"
+      ;    :text {battery.icon})
+      ;  (label
+      ;    :text {battery.percentage})
+      ;  (label
+      ;    :class "battery-status"
+      ;    :text {battery.status})
+      ;  (label
+      ;    :class "battery-wattage"
+      ;    :text {battery.status != "Fully Charged" ? battery.wattage : ""}))
+      ;(label)
+      (box
+        :space-evenly false
+        :halign "end"
+        (button
+          :halign "end"
+          :class "power-button icon"
+          :onclick "wlogout -p layer-shell &"
+          "")))))
 
 (defwindow system-menu
   :stacking "fg" 
