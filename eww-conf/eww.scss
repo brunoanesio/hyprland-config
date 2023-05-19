@@ -45,6 +45,11 @@ tooltip {
   }
 }
 
+.text,
+.text label {
+  text-shadow: 0 0 0.3rem $base;
+}
+
 .num,
 .num label {
   font-family: Jost;

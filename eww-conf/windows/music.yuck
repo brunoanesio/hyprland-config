@@ -9,24 +9,25 @@
       :orientation "v"
       :class "music-box"
       (label
-        :class "music-title"
+        :class "music-title text"
         :wrap true
         :justify "center"
         :text {music.title})
       (label
-        :class "music-artist"
+        :class "music-artist text"
         :wrap true
         :justify "center"
         :text {music.artist})
       (centerbox
         :halign "center"
-        :class "music-button-box icon"
+        :class "music-button-box icon text"
         (button :class "music-button" :onclick "playerctl -p spotify previous" "")
         (button :class "music-button" :onclick "playerctl -p spotify play-pause" {music.status})
         (button :class "music-button" :onclick "playerctl -p spotify next" ""))
       (box
         :orientation "v"
         (box
+          :class "text"
           (label
             :xalign 0
             :class "music-time"
