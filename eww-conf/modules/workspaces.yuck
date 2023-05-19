@@ -8,6 +8,6 @@
 	  (for ws in {hyprland.workspaces}
 	    (button
 		  :onclick "hyprctl dispatch workspace ${ws.number}"
-          :class "ws num"
+          :class "ws text"
 		  :style "color: ${ws.color};"
 		  (label :text "${ws.number}"))))))
