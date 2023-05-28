@@ -1,4 +1,3 @@
-; (defvar ws-icons '["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]')
 (defwidget workspaces []
   (eventbox
     :onscroll "echo {} | sed -e \"s/up/+1/g\" -e \"s/down/-1/g\" | xargs hyprctl dispatch workspace"
@@ -8,6 +7,6 @@
 	  (for ws in {hyprland.workspaces}
 	    (button
 		  :onclick "hyprctl dispatch workspace ${ws.number}"
-          :class "ws text"
+          :class "ws text num"
 		  :style "color: ${ws.color};"
 		  (label :text "${ws.number}"))))))

@@ -13,10 +13,10 @@
         :class "date-box"
         :space-evenly false
         (label
-          :class "date"
+          :class "date text"
           :text {time.date})
         (label
-          :class "day"
+          :class "day text"
           :text {time.day})))
 
     (centerbox
@@ -72,22 +72,21 @@
           :tooltip {bluetooth.battery}
           :wrap true))
 
-      (box))
-      ;(box
-      ;  :class "airplane-box"
-      ;  :space-evenly false
-      ;  :orientation "v"
-      ;  (box
-      ;    :class "element"
-      ;    (button
-      ;      :class "airplane-button"
-      ;      :onclick "scripts/airplane toggle"
-      ;      airplane))
-      ;  (label
-      ;    :class "text"
-      ;    :text "Airplane Mode"
-      ;    :xalign 0.5
-      ;    :limit-width 16)))
+      (box
+        :class "airplane-box"
+        :space-evenly false
+        :orientation "v"
+        (box
+          :class "element"
+          (button
+            :class "airplane-button"
+            :onclick "scripts/airplane toggle"
+            airplane))
+        (label
+          :class "text"
+          :text "Airplane Mode"
+          :xalign 0.5
+          :limit-width 16)))
 
     (box
       :class "sliders"

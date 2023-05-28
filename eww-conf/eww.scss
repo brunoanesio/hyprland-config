@@ -12,7 +12,7 @@
 
 * {
   all: unset;
-  font-family: "Jost";
+  font-family: "Lexend";
   font-weight: 500;
   transition: 200ms ease;
 }
@@ -52,7 +52,6 @@ tooltip {
 
 .num,
 .num label {
-  font-family: Jost;
   font-size: 1.2rem;
 }
 
@@ -65,12 +64,17 @@ tooltip {
   margin: 0 5px;
 }
 
+.hour {
+  margin-bottom: 0.15rem;
+}
 .minute {
   padding-right: 0.4rem;
+  margin-bottom: 0.15rem;
 }
 
 .date {
   color: $flamingo;
+  margin-bottom: 0.15rem;
 
   label {
     font-size: 1.2rem;
@@ -97,6 +101,6 @@ scale trough {
 }
 
 .power-icon {
-  color: #f38ba8;
+  color: $red;
   padding-right: 0.7rem;
 }

@@ -14,6 +14,7 @@
           :text {time.hour}
           :class "hour")
         (label
+          :style "margin-bottom: 0.15rem"
           :text ":")
         (label
           :text {time.minute}
