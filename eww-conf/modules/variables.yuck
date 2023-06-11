@@ -17,3 +17,4 @@
 (deflisten net "scripts/net")
 (deflisten volume "scripts/volume")
 (deflisten hyprland "scripts/hyprland")
+(deflisten wallpaper "scripts/wallpaper")

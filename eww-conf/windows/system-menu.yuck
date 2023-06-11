@@ -73,20 +73,32 @@
           :wrap true))
 
       (box
-        :class "airplane-box"
+        :class "wallpaper-box"
         :space-evenly false
         :orientation "v"
         (box
-          :class "element"
+          :class "element icon"
+          :space-evenly false
           (button
-            :class "airplane-button"
-            :onclick "scripts/airplane toggle"
-            airplane))
+            :class "wallpaper-button"
+            :onclick "scripts/wallpaper pick"
+            :tooltip "Pick a wallpaper (catnip)"
+            {wallpaper.icon})
+          (label
+            :class "separator"
+            :text "│")
+          (button
+            :class "wallpaper-arrow-btn"
+            :onclick "scripts/wallpaper random"
+            :tooltip "Next wallpaper"
+            ""))
         (label
           :class "text"
-          :text "Airplane Mode"
+          :text "Change wallpaper"
           :xalign 0.5
-          :limit-width 16)))
+          :justify "center"
+          :tooltip {wallpaper.tooltip}
+          :wrap true)))
 
     (box
       :class "sliders"
