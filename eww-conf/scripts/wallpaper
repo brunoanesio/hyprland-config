@@ -67,4 +67,4 @@ prev)
 	;;
 esac
 
-echo '{"icon": "󰋩 ", "tooltip": "'"$image"'"}'
+echo '{"icon": "󰋩", "tooltip": "'"$image"'"}'

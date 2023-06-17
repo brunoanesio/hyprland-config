@@ -80,7 +80,7 @@
           :class "element icon"
           :space-evenly false
           (button
-            :class "wallpaper-button"
+            :class "icon"
             :onclick "scripts/wallpaper pick"
             :tooltip "Pick a wallpaper (catnip)"
             {wallpaper.icon})

@@ -34,12 +34,16 @@
 .system-row {
   margin: 0.5rem 0.7rem;
 
-  .airplane-box button {
-    padding: 0.85rem 3rem;
+  .bluetooth-box button {
+    padding: 0.85rem 1.15rem 0.85rem 1.15rem;
+  }
+
+  .net-box button {
+    padding: 0.85rem 1.4rem 0.85rem 1.4rem;
   }
 
   .wallpaper-box button {
-    padding: 0.85rem 1.15rem 0.85rem 1.15rem;
+    padding: 0.67rem 1.65rem 0.67rem 1.65rem;
   }
 
   label {
@@ -50,7 +54,7 @@
 
 .element {
   @include rounding;
-  background-color: $bg1;
+  background-color: #242636;
   margin: 0.3rem;
 
   button {
@@ -69,12 +73,12 @@
 
 .sliders {
   @include rounding;
-  background-color: rgba(49, 50, 68, 0.5);
+  background-color: #242636;
   margin: 0.5rem 1rem;
   padding: 0.6rem 1rem;
 
   scale {
-    min-width: 21.5rem;
+    min-width: 25rem;
 
     trough {
       margin-right: 0;
@@ -92,7 +96,7 @@
 .volume-slider-box,
 .brightness-slider-box {
   trough {
-    background-color: $base;
+    background-color: $bg;
   }
 }
 
@@ -144,6 +148,13 @@
   button:hover {
     background-color: #7ba2e1;
   }
+}
+
+.system-info-box {
+  @include rounding;
+  background-color: #242636;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
 }
 
 .net-connected {

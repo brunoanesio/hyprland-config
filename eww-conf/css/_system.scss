@@ -45,13 +45,6 @@
   margin: 1.5rem;
 }
 
-.system-info-box {
-  @include rounding;
-  background-color: rgba(49, 50, 68, 0.5);
-  margin: 0.5rem 1rem;
-  padding: 0.5rem;
-}
-
 .sys-mem,
 .sys-cpu {
   background-color: $bg;
