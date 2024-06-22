@@ -10,4 +10,4 @@ paru -S hyprland waybar thunar wlogout swww rofi-lbonn-wayland-git grimblast otf
 
 ## Screenshot
 
-![Hyprland](./screenshot/hyprland.png)
+![Hyprland](https://i.imgur.com/8MgshE0.png)
